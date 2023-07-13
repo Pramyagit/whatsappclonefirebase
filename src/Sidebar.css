@@ -1,0 +1,44 @@
+.sidebar{
+    display:flex;
+    flex-direction: column;
+    flex:0.35;
+}
+.sidebar_header{
+    display:flex;
+    justify-content: space-between;
+padding: 20px;
+border:1px solid lightgray;
+}
+.headerRight{
+    display: flex;
+    width:50%;
+    justify-content: space-between;
+align-items: center;
+min-width:10vw;
+}
+.side_searchbar{
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    height:39px;
+    padding:10px;
+}
+.serach_container{
+    display:flex;
+    align-items: center;
+    background-color: white;
+    height:35px;
+    border-radius: 5px;
+}
+.serach_container>.MuiSvgIcon-root{
+    color:gray;
+    padding:10px;
+}
+.serach_container>input{
+    border: none;
+    margin-left:10px;
+}
+.headerRight>.MuiSvgIcon-root{
+    margin-right:2vw;
+    font-size:20px;
+}
