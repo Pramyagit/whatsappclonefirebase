@@ -6,7 +6,9 @@ import ChatIcon from '@mui/icons-material/Chat';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Sidechat from './Sidechat';
 import {db} from './firebase';
-const Sidebar = () => {
+import { Button } from '@mui/material';
+import { Close } from '@mui/icons-material';
+const Sidebar = ({setUser}) => {
     const [rooms,setRooms]=useState([]);
   useEffect(()=>{
    const unsubscribe= db.collection('rooms').onSnapshot(
@@ -24,6 +26,11 @@ const Sidebar = () => {
     // console.log(rooms)
     return (
     <div className='sidebar'>
+
+          <Button  className="close" onClick={()=>{
+        sessionStorage.setItem('user','');
+        setUser('');
+      }}><Close/>logout</Button>
         <div className="sidebar_header">
             <Avatar
             src="https://www.freepnglogos.com/uploads/bill-gates-png/hq-download-bill-gates-speech-transparent-png-image-8.png"
@@ -34,6 +41,7 @@ const Sidebar = () => {
                 <IconButton><MoreVertIcon/></IconButton>
             </div>
             </div>
+
             <div className='side_searchbar'>
                 <div className="serach_container">
                     <Search/>

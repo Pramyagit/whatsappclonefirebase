@@ -3,17 +3,16 @@ import './App.css';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
-import { Login } from '@mui/icons-material';
+import Login from './Login';
 function App() {
-const[user,setUser]=useState(sessionStorage.getItem('user'|| ""))
-
-  return user?<Login/>:
+const[user,setUser]=useState(sessionStorage.getItem('user')? JSON.parse(sessionStorage.getItem('user')): "")
+  return !user?<Login setUser={setUser}/>:
   (
     <div className="app">
       {/* <h1>wtsapp clone</h1> */}
       <div className="app_body">
       <BrowserRouter>
-        <Sidebar/>
+        <Sidebar setUser={setUser}/>
   <Routes>
     <Route path="/rooms/:roomId" element={<Chat/>}/>
     <Route path="/" element={<Chat/>}/>

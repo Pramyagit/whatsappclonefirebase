@@ -5,6 +5,7 @@
   height:100vh;
 }
 .app_body{
+  overflow: scroll;
   background-color: #ededed;
 display: flex;
 height:90vh;

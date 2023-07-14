@@ -51,7 +51,7 @@ setInput('');
 message.name}</span>
 {message.message}
  <span className='chat_timestamp'>
- {new Date(messages[messages.length-1]?.timestamp?.toDate()).toUTCString()}
+ {new Date(messages[messages.length-1]?.timestamp?.toDate()).toLocaleTimeString()}
       </span>
       </p>
         ))}

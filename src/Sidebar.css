@@ -42,3 +42,20 @@ min-width:10vw;
     margin-right:2vw;
     font-size:20px;
 }
+
+.sidebar>.close{
+    /* content:'logout'; */
+    /* display: flex; */
+    width:100px;height:40px;
+    position: absolute;
+    top:50px;
+    left:140px;
+    font-size: 10px;
+    display:none;
+    background-color: rgb(231, 229, 229);
+}
+
+.sidebar:hover .close{
+      display:block;
+
+  }

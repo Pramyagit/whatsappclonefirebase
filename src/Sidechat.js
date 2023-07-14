@@ -34,7 +34,6 @@ const roomName=prompt('please enter the room name');
   return (
     !addNewChat?(
       <Link to={`/rooms/${id}`}>
-
     <div className="sideChat">
       <Avatar src={photo}/>
       <div className="sidechat_info">
