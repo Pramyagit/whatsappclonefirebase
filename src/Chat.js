@@ -14,7 +14,7 @@ const Chat = () => {
 
   const submitMessage=(e)=>{
 e.preventDefault();
-console.log(serverTimestamp())
+// console.log(serverTimestamp())
 db.collection('rooms').doc(roomId).collection('messages').add({
   message:input,
   name:"suji",
@@ -51,7 +51,7 @@ setInput('');
 message.name}</span>
 {message.message}
  <span className='chat_timestamp'>
- {new Date(messages[messages.length-1]?.timestamp?.toDate()).toLocaleTimeString()}
+ {new Date(messages[0]?.timestamp?.toDate()).toLocaleTimeString()}
       </span>
       </p>
         ))}
@@ -60,9 +60,10 @@ message.name}</span>
       <div className="chat_footer">
         <InsertEmoticon/>
         <form>
-          <input placeholder=''type="text" value={input} onChange={e=>setInput(
-            e.target.value
-          )}></input>
+          <input placeholder='msg type here' type="text" value={input} 
+          onChange={e=>
+              setInput(e.target.value)
+            } ></input>
 <button onClick={submitMessage}><Send/></button>
         </form>
         <Mic/>
