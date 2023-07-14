@@ -7,6 +7,20 @@ const Sidechat = ({id,name,photo,addNewChat}) => {
   
   const[messages,setMessages]=useState('')
   
+
+  const addRoom=()=>{
+const roomName=prompt('please enter the room name');
+ const roomPhoto=prompt('please enter the photo url');
+ if(roomName && roomPhoto)
+ {
+  db.collection('rooms').add(
+    {
+      name:roomName,roomPhoto
+    }
+  )
+ }
+}
+
   useEffect(()=>{
     if(id){
       db.collection('rooms')
@@ -31,7 +45,7 @@ const Sidechat = ({id,name,photo,addNewChat}) => {
       </Link>
     ):(
     <div className='sidechat'>
-      <h2 className='additem'>Add New Chat</h2>
+      <h2 className='additem' onClick={addRoom}>Add New Chat</h2>
     </div>
     )
   )
