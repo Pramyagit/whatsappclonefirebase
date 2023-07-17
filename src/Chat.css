@@ -42,7 +42,9 @@ overflow: scroll;
     height:62px;
     border-top: 1px solid lightgray;
 width:100%;
+cursor: pointer;
 }
+
 .chat_footer>form{
     flex:1;
     display: flex;

@@ -29,6 +29,7 @@ min-width:10vw;
     align-items: center;
     background-color: white;
     height:35px;
+    width:400px;
     border-radius: 5px;
 }
 .serach_container>.MuiSvgIcon-root{
@@ -37,6 +38,7 @@ min-width:10vw;
 }
 .serach_container>input{
     border: none;
+    width:250px;height:25px;
     margin-left:10px;
 }
 .headerRight>.MuiSvgIcon-root{

@@ -8,8 +8,9 @@ import Sidechat from './Sidechat';
 import {db} from './firebase';
 import { Button } from '@mui/material';
 import { Close } from '@mui/icons-material';
-const Sidebar = ({setUser}) => {
+const Sidebar = ({setUser,user}) => {
     const [rooms,setRooms]=useState([]);
+    
   useEffect(()=>{
    const unsubscribe= db.collection('rooms').onSnapshot(
         (snapshot)=>{
@@ -33,8 +34,9 @@ const Sidebar = ({setUser}) => {
       }}><Close/>logout</Button>
         <div className="sidebar_header">
             <Avatar
-            src="https://www.freepnglogos.com/uploads/bill-gates-png/hq-download-bill-gates-speech-transparent-png-image-8.png"
-            />
+            // src="https://www.freepnglogos.com/uploads/bill-gates-png/hq-download-bill-gates-speech-transparent-png-image-8.png"
+           src={user.photoURL}
+           />{user.displayName}
             <div className='headerRight'>
                 <IconButton><DonutLarge/></IconButton>
                 <IconButton><ChatIcon/></IconButton>
