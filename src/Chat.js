@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Chat.css'
 import { Avatar, IconButton } from '@mui/material'
-import { AttachFile, InsertEmoticon,MoreVert,Mic, SearchOutlined, Send } from '@mui/icons-material'
+import { AttachFile, InsertEmoticon,MoreVert, SearchOutlined, Send } from '@mui/icons-material'
 import { useParams } from 'react-router-dom'
 import { db } from './firebase'
 import {serverTimestamp} from 'firebase/firestore';
 // import Picker from 'emoji-picker-react';
 import EmojiPicker from 'emoji-picker-react'
+import Mic from './Mic'
 
 const Chat = ({user}) => {
   const {roomId}=useParams();
@@ -45,8 +46,6 @@ setEmojiPicker('')
 
 const handleInput=(e)=>{
     setInput(e.target.value)
-
-
 }
 
 var today = new Date(messages[0]?.timestamp?.toDate()),
@@ -104,7 +103,10 @@ message.name}</span>
           onChange={handleInput} required></input>
 <button type="submit" onClick={submitMessage}><Send/></button>
         </form>
-        <Mic speech={speech}
+        <Mic
+        value={input}
+        setinput={setInput}
+        speech={speech}
         setSpeech={setSpeech}/>
       </div>
       </div>

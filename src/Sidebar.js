@@ -31,12 +31,14 @@ const Sidebar = ({setUser,user}) => {
           <Button  className="close" onClick={()=>{
         sessionStorage.setItem('user','');
         setUser('');
-      }}><Close/>logout</Button>
+      }}>
+        <Close/>logout</Button>
         <div className="sidebar_header">
             <Avatar
             // src="https://www.freepnglogos.com/uploads/bill-gates-png/hq-download-bill-gates-speech-transparent-png-image-8.png"
            src={user.photoURL}
-           />{user.displayName}
+           />
+           {user.displayName}
             <div className='headerRight'>
                 <IconButton><DonutLarge/></IconButton>
                 <IconButton><ChatIcon/></IconButton>
