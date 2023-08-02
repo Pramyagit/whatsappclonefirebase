@@ -21,6 +21,9 @@ const Chat = ({user}) => {
     setInput((input) => input + e.emoji)
     setEmojiPicker(emojiObject);
   };
+
+ 
+
 // console.log(user.displayName)
   const submitMessage=(e)=>{
 e.preventDefault();
@@ -46,6 +49,7 @@ setEmojiPicker('')
 
 const handleInput=(e)=>{
     setInput(e.target.value)
+    // console.log((e.target.value))
 }
 
 var today = new Date(messages[0]?.timestamp?.toDate()),

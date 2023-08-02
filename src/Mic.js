@@ -3,7 +3,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { Mic} from '@mui/icons-material';
 
 
-const Micro = ({value}) => {
+const Micro = ({value,input,setInput}) => {
   const {
     transcript,
     browserSupportsSpeechRecognition
@@ -16,14 +16,17 @@ const Micro = ({value}) => {
 
  }
 const inputValue=()=>{
-value={transcript}
-console.log(value)
+console.log(transcript);
+setInput=transcript;
+const inputs=document.getElementById('input');
+console.log(inputs.value=setInput)
 }
  
   return (
     <>
     <div>
       <button onClick={inputValue}
+      value={transcript}
       onTouchStart={startListening}
       onMouseDown={startListening}
       onTouchEnd={SpeechRecognition.stopListening}
